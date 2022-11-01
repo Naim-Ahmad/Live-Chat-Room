@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Room</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Header Area -->
+      <div class="header">
+        <div class="perticipent">
+          <span id="user-logo">A</span><span id="user-name">AlorKhoje</span>
+        </div>
+        <div onclick="showMenu()" id="menu" class="my-menu">
+          <!-- <input type="checkbox">
+          <span class="one common"></span>
+          <span class="two common"></span>
+          <span class="three common"></span> -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="33"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </div>
+        <div onclick="hideMenu()" id="close" class="close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="33"
+            fill="currentColor"
+            class="bi bi-x-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+        </div>
+      </div>
+      <!-- Chat Area -->
+
+      <div class="chat-area">
+        <div class="left">Hello how are you</div>
+        <div class="right">I am Fine</div>
+        <div class="left">Hello how are you</div>
+        <div class="right">I am Fine</div>
+        <div class="left">Hello how are you</div>
+        <div class="right">I am Fine</div>
+        <div class="left">Hello how are you? ei kotha bar bar bolish keno</div>
+        <div class="right">I am Fine</div>
+        <div class="left">Hello how are you</div>
+        <div class="right">I am Fine</div>
+        <div class="left">Hello how are you? ei kotha bar bar bolish keno</div>
+        <div class="right">I am Fine</div>
+        <div class="left">Hello how are you</div>
+        <div class="right">I am Fine</div>
+        <div class="left">Hello how are you? ei kotha bar bar bolish keno</div>
+        <div class="right">I am Fine</div>
+        <div class="left">Hello how are you</div>
+        <div class="right">I am Fine</div>
+      </div>
+      <!-- Message Input Area -->
+      <div class="msg-input-area">
+        <textarea
+          oninput="auto_grow(this)"
+          placeholder="এখান থেকে লিখুন..."
+        ></textarea>
+
+        <button id="Send-btn">Send</button>
+      </div>
+    </main>
+    <aside id="aside">
+      <div class="logout-btn">
+        <div class="logout"><a href="#">লগ আউট</a></div>
+      </div>
+      <div class="perticipant-div">
+        <ul id="perticipents">
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+          <li class="list-item">Demo</li>
+        </ul>
+      </div>
+    </aside>
+    <!-- Participate Name List -->
+    <script>
+      function auto_grow(element) {
+        element.style.height = '5px'
+        let e = (element.style.height = element.scrollHeight + 'px')
+        console.log(e)
+      }
+
+      const close = document.getElementById('close')
+      const menu = document.getElementById('menu')
+      const aside = document.getElementById('aside')
+      close.style.visibility = 'hidden'
+
+      function showMenu() {
+        console.log('visible')
+        close.style.visibility = 'visible'
+        menu.style.visibility = 'hidden'
+        aside.style.transform = 'translateX(-185%)'
+      }
+      function hideMenu(){
+        close.style.visibility = 'hidden'
+        menu.style.visibility = 'visible'
+        aside.style.transform = 'translateX(100%)'
+      }
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>

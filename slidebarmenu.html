@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SlideBar Menu</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-color: aliceblue;
+    }
+    .slide{
+      width: 30%;
+      height: 100vh;
+      background-color: #FFf;
+      position: absolute;
+      transition: 0.5s ease;
+      transform: translateX(-100%);
+    }
+    .slide h3{
+      color: blueviolet;
+      padding: 1rem 0px;
+      margin-left: 3rem;
+    }
+    .slide ul{
+      list-style: none;
+      margin-left: 3rem;
+
+    }
+
+    .slide ul li{
+      text-transform: capitalize;
+      padding: 4px 0px;
+      font-size: 20px;
+    }
+
+    .slide ul li a{
+      text-decoration: none;
+      color: black
+    }
+    input{
+      display: none;
+      visibility: hidden;
+      -webkit-appearance: none;
+    }
+    .menu{
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #fff;
+      z-index: 1;
+      top:3%;
+      left: 2%;
+      box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+    .menu .common {
+      position: absolute;
+      width: 70%;
+      height: 3px;
+      background-color: #8000ff;
+      left: 50%;
+      transform: translate(-50%);
+      display: inline-block;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+    .one {
+      top: 20%;
+    }
+    .two{
+      top: 45%;
+    }
+    .menu .three{
+      top: 70%;
+    }
+    input:checked ~ .menu .one {
+      top: 45%;
+      left: 5%;
+      width: 90%;
+      transform: rotate(45deg);
+    }
+    input:checked ~ .menu .three {
+      top: 45%;
+      left: 5%;
+      width: 90%;
+      transform: rotate(-45deg);
+    }
+    input:checked ~ .menu .two {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    input:checked ~ .slide {
+      transform: translateX(0);
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <label>
+  <input type="checkbox">
+  <div class="menu">
+    <span class="one common"></span>
+    <span class="two common"></span>
+    <span class="three common"></span>
+  </div>
+    <div class="slide">
+      <h3>MENU</h3>
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact us</a></li>
+        <li><a href="#">Product</a></li>
+      </ul>
+    </div>
+  </label>
+</body>
+</html>
